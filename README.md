@@ -1,0 +1,1 @@
+Exercises from _Learn C the hard way book_ by Zed Shaw. http://c.learncodethehardway.org/book.
