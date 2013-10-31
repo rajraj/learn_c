@@ -58,10 +58,13 @@ struct Connection *Database_open(const char *filename, char mode)
   } else {
     conn->file = fopen(filename, "r+");
     
-    if(conn->file){
+    if(conn->file) {
       Database_load(conn);
     }
   }
+  
+  if(!conn->file) die("Failed to open file.");
+  return conn;
 }
 
 void Database_close(struct Connection *conn){
