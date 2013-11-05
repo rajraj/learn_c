@@ -13,7 +13,7 @@ int Monster_attack(void *self, int damage)
   monster->hit_points -= damage;
 
   if(monster->hit_points > 0) {
-    printf("It is still alive.\n");
+    printf("It is still alive. Hits left %d\n", monster->hit_points);
     return 0;
   } else {
     printf("It is dead!\n");
@@ -62,7 +62,7 @@ void *Room_move(void *self, Direction direction)
   return next;
 }
 
-int Room_attacked(void *self, int damage)
+int Room_attack(void *self, int damage)
 {
   Room *room = self;
   Monster *monster = room->bad_guy;
